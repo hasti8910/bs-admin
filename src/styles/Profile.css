@@ -84,7 +84,7 @@ h1 {
 
 .profile-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 550px;
     margin: 0 auto; /* Center horizontally */
     display: flex; /* Add Flexbox */
     justify-content: center; /* Center horizontally within the flex container */
@@ -98,6 +98,7 @@ h1 {
     .profile-card {
       background-color: #2d3748;
       border-radius: 10px;
+      margin-top: 100px;
       padding: 2rem;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
       width: 100%; /* Ensure it spans full width of the container */
@@ -154,7 +155,7 @@ h1 {
     }
     
     .form-group input {
-      width: 100%;
+      width: 450px;
       padding: 0.70rem;
       background-color: #4a5568;
       border: none;
@@ -173,7 +174,7 @@ h1 {
     
     .password-group i {
       position: absolute;
-      right: 10px;
+      right: -210px;
       top: 50%;
       transform: translateY(-50%);
       color: #a0aec0;
@@ -184,7 +185,7 @@ h1 {
     .profile-actions {
       margin-top: 1.5rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
     
     .btn {

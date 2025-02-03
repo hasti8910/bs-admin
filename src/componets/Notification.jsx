@@ -53,7 +53,7 @@ const Notification = () => {
     <div className="report-container">
       {/* Header Section */}
       <div className="report-header">
-        <div className="report-dash">
+        <div className="report-title">
           <i
             className="fa-solid fa-arrow-left back"
             style={{ fontSize: "14px", color: "white" }}

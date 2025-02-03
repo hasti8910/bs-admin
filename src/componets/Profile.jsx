@@ -19,14 +19,14 @@ const Profile = () => {
   return (
     <div className="report-container">
     <div className="report-header">
-      <div className="report-dash">
+      <div className="report-title">
         <i className="fa-solid fa-arrow-left back" style={{ fontSize: "14px", color: 'white' }}></i>
         <h1>Profile</h1>
       </div>
 
       <div className="report-two-icon">
         <div className="bell">
-          <i className="fa-solid fa-bell icon2"></i>
+          <i className="fa-solid fa-bell note-bell"></i>
         </div>
         <div className="profile">
           <img src="https://placehold.co/40x40" alt="User profile" className='profile-img' />
@@ -37,27 +37,27 @@ const Profile = () => {
     <div className="profile-content">
         <div className="profile-card">
           <div className="profile-header-card">
-          <div className="image-upload">
-              <label htmlFor="file-input">
-                <img
-                  src={profileImage}
-                  alt="Profile"
-                  className="profile-avatar"
-                  style={{ cursor: "pointer" }}
+            <div className="image-upload">
+                <label htmlFor="file-input">
+                  <img
+                    src={profileImage}
+                    alt="Profile"
+                    className="profile-avatar"
+                    style={{ cursor: "pointer" }}
+                  />
+                </label>
+                <input
+                  id="file-input"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  style={{ display: "none" }}
                 />
-              </label>
-              <input
-                id="file-input"
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                style={{ display: "none" }}
-              />
-            </div>
-            <div className="profile-text">
-              <h2 className="profile-name">John Doe</h2>
-              <p className="profile-role">Manager</p>
-            </div>
+              </div>
+              <div className="profile-text">
+                <h2 className="profile-name">John Doe</h2>
+                <p className="profile-role">Manager</p>
+              </div>
           </div>
 
           {/* Form Section */}
@@ -78,14 +78,14 @@ const Profile = () => {
               <label>New Password</label>
               <div className="password-group">
                 <input type="password" placeholder="••••••••" />
-                <i className="fa-solid fa-eye"></i>
+                <i className="fa-solid fa-eye eye"></i>
               </div>
             </div>
             <div className="form-group">
               <label>Confirm Password</label>
               <div className="password-group">
                 <input type="password" placeholder="••••••••" />
-                <i className="fa-solid fa-eye"></i>
+                <i className="fa-solid fa-eye eye"></i>
               </div>
             </div>
           </div>

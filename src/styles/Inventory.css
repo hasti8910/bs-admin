@@ -89,7 +89,7 @@
     justify-content: space-between;
     margin-top: 20px;
   }
-  .category{
+  .category2{
     background-color: #608BC1;
     border-radius: 5px;
     width: 140px;
@@ -115,7 +115,7 @@
   /* Sidebar */
   .sidebar1 {
     width: 300px;
-    height: 700px;
+    height: 430px;
     -top: 60px;
     background-color: #1a202c;
     color: white;

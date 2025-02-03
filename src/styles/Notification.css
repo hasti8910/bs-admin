@@ -1,13 +1,85 @@
-.note-bell{
+.report-container {
+  padding: 26px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header Section */
+h1 {
+  color: white;
+  font-weight: 100;
+  font-size: 23px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.back {
+  margin-bottom: 3px;
+  background-color: rgb(75, 75, 75);
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 7px;
+  margin-top: 13px;
+  height: 17px;
+  width: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-header {
+  display: flex;
+  font-family: sans-serif;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.report-title {
+  display: flex;
+  width: 230px;
+  height: 100%;
+}
+
+.report-two-icon {
+  display: flex;
+  width: auto;
+  height: 100%;
+  margin-right: 9px;
+}
+
+.note-bell {
   font-size: 13px;
   margin-bottom: 3px;
   color: rgb(255, 255, 255);
-  border-radius: 50%;       /* Make it circular */
-  padding: 4px;            /* Add padding for spacing */
-  display: flex;            /* Use flexbox to center the icon */
-  align-items: center;      /* Vertically center the icon */
-  justify-content: center;  /* Horizontally center the icon */
-  
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell,
+.profile {
+  width: 50%;
+  height: 20px;
+}
+
+.bell {
+  border-right: 1px solid rgb(227, 223, 223);
+  padding-right: 10px;
+}
+
+.profile {
+  padding-left: 15px;
+  margin-top: -4px;
+}
+
+.profile-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .tabs-row {

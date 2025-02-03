@@ -18,15 +18,16 @@ const Dashboard = () => {
        { title: 'David Copperfield', author: 'Charles Dickens', price: 'Rs. 500', status: 'In Stock', image: 'https://via.placeholder.com/50' },
      ];
    
-     const books2 = [
-       { title: 'Wuthering Heights', author: 'Emily Brontë', price: 'Rs. 450', status: 'Out of Stock', image: 'https://via.placeholder.com/50' },
-       { title: 'To Kill a Mockingbird', author: 'Harper Lee', price: 'Rs. 600', status: 'In Stock', image: 'https://via.placeholder.com/50' },
-       { title: 'Pride and Prejudice', author: 'Jane Austen', price: 'Rs. 400', status: 'In Stock', image: 'https://via.placeholder.com/50' },
-       { title: 'David Copperfield', author: 'Charles Dickens', price: 'Rs. 500', status: 'In Stock', image: 'https://via.placeholder.com/50' },
-        { title: 'Pride and Prejudice', author: 'Jane Austen', price: 'Rs. 400', status: 'In Stock', image: 'https://via.placeholder.com/50' },
-       { title: 'David Copperfield', author: 'Charles Dickens', price: 'Rs. 500', status: 'In Stock', image: 'https://via.placeholder.com/50' },
-     ];
+     const stationery1 = [
+      { name: 'Notebook', brand: 'Classmate', price: 'Rs. 100', status: 'In Stock', image: 'https://via.placeholder.com/50' },
+      { name: 'Gel Pen', brand: 'Parker', price: 'Rs. 50', status: 'Out of Stock', image: 'https://via.placeholder.com/50' },
+      { name: 'Notebook', brand: 'Classmate', price: 'Rs. 100', status: 'In Stock', image: 'https://via.placeholder.com/50' },
+      { name: 'Gel Pen', brand: 'Parker', price: 'Rs. 50', status: 'Out of Stock', image: 'https://via.placeholder.com/50' },
+      { name: 'Notebook', brand: 'Classmate', price: 'Rs. 100', status: 'In Stock', image: 'https://via.placeholder.com/50' },
+      { name: 'Gel Pen', brand: 'Parker', price: 'Rs. 50', status: 'Out of Stock', image: 'https://via.placeholder.com/50' },
+  ];
 
+     
      const navigate = useNavigate(); 
 
      const handleProfileClick = () => {
@@ -111,60 +112,59 @@ const Dashboard = () => {
        </div>
 
        <div className="popular-books-row">
-     <div className="popular-books">
-       <div className="header">
-         <h2>Popular Books</h2>
-         <a href="/" className="see-all">See All</a>
-       </div>
-       <div className="books-list">
-         {books1.map((book, index) => (
-           <div className="book-card" key={index}>
-             <img src={book.image} alt={book.title} className="book-image" />
-             <div className="book-details">
-               <div className="info">
-               <h3 className="book-title">{book.title}</h3>
-               <p className="book-author">{book.author}</p>
-               <p className="book-author">{book.author}</p>
-               </div>
-               <div className="meta">
-                   <p className={`book-status ${book.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}`}>
-                   {book.status}
-                   </p>
-                   <p className="book-price">{book.price}</p>             
-               </div>
-             
-               
-             </div>
-           </div>
-         ))}
-       </div>
-     </div>
-     <div className="popular-books">
-       <div className="header">
-         <h2>Popular Books</h2>
-         <a href="/" className="see-all">See All</a>
-       </div>
-       <div className="books-list">
-         {books2.map((book, index) => (
-           <div className="book-card" key={index}>
-             <img src={book.image} alt={book.title} className="book-image" />
-             <div className="book-details">
-             <div className="info">
-               <h3 className="book-title">{book.title}</h3>
-               <p className="book-author">{book.author}</p>
-               </div>
-               <div className="meta">
-                   <p className={`book-status ${book.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}`}>
-                   {book.status}
-                   </p>
-                   <p className="book-price">{book.price}</p>             
-               </div>
-             </div>
-           </div>
-         ))}
-       </div>
-     </div>
+          <div className="popular-books">
+            <div className="header">
+              <h2>Popular Books</h2>
+              <a href="/" className="see-all">See All</a>
+            </div>
+            <div className="books-list">
+              {books1.map((book, index) => (
+                <div className="book-card" key={index}>
+                  <img src={book.image} alt={book.title} className="book-image" />
+                  <div className="book-details">
+                    <div className="info">
+                        <h3 className="book-title">{book.title}</h3>
+                        <p className="book-author">{book.author}</p>
+                    </div>
+                    <div className="meta">
+                        <p className={`book-status ${book.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}`}>
+                        {book.status}
+                        </p>
+                        <p className="book-price">{book.price}</p>             
+                    </div>
+                  
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="popular-books">
+            <div className="header">
+              <h2>Popular Stationery</h2>
+              <a href="/" className="see-all">See All</a>
+            </div>
+            <div className="books-list">
+              {stationery1.map((item, index) => (
+                <div className="book-card" key={index}>
+                  <img src={item.image} alt={item.name} className="book-image" />
+                  <div className="book-details">
+                  <div className="info">
+                    <h3 className="book-title">{item.name}</h3>
+                    <p className="book-author">{item.brand}</p>
+                    </div>
+                    <div className="meta">
+                        <p className={`book-status ${item.status === 'In Stock' ? 'in-stock' : 'out-of-stock'}`}>
+                        {item.status}
+                        </p>
+                        <p className="book-price">{item.price}</p>             
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
    </div>
+
 
      </div>
  );

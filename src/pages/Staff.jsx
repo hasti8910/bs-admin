@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Staff.css'
+import Addstaff from '../componets/Addstaff';
 
 const Staff = () => {
 
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('staff');
 
   const handleToggle = (tab) => {
     setActiveTab(tab);
+  };
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const navigate = useNavigate(); 
@@ -34,20 +40,28 @@ const Staff = () => {
     { id: 111, name: 'hhhhhhhh', email: 'watsonjoyce112@gmail.com', phone: '+1 (123) 123 4654', age: 45, salary: 2200.0, timings: '9am to 6pm' },
   ]);
 
-  const attendanceData = [
-    { id: 101, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: 'Present' },
-    { id: 102, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: 'Absent' },
-    { id: 103, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: 'Present' },
-    { id: 104, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: 'Absent' },
-    { id: 105, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: 'Present' },
-    { id: 106, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: 'Absent' },
-    { id: 107, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: 'Present' },
-    { id: 108, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: 'Absent' },
-  ];
+  const [attendanceData, setAttendanceData] = useState([
+    { id: 101, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: '' },
+    { id: 102, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: '' },
+    { id: 103, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: '' },
+    { id: 104, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: '' },
+    { id: 105, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: '' },
+    { id: 106, name: 'Sarah Leee', date: '16-Apr-2024', timings: '10am to 7pm', status: '' },
+    { id: 107, name: 'Watson Joyce', date: '16-Apr-2024', timings: '9am to 6pm', status: '' },
+    { id: 108, name: 'Sarah Lee', date: '16-Apr-2024', timings: '10am to 7pm', status: '' },
+  ]); 
 
   const deleteStaff = (id) => {
     const updatedStaff = staffData.filter((member) => member.id !== id);
     setStaff(updatedStaff);
+  };
+
+  const updateAttendanceStatus = (id, newStatus) => {
+    setAttendanceData((prevData) =>
+      prevData.map((record) =>
+        record.id === id ? { ...record, status: newStatus } : record
+      )
+    );
   };
 
   return (
@@ -76,11 +90,12 @@ const Staff = () => {
                     <h2>{activeTab === 'staff' ? `Staff (${staffData.length})` : `Attendance (${attendanceData.length})`}</h2>
                   </div>
                   <div className="action-btn">
-                    <button className="add-staff">Add Staff</button>
-                    <button className="sort-by">Sort by</button>
+                    <button className="add-staff"  onClick={handleMenuToggle}>Add Staff</button>
+                    {/* <button className="sort-by">Sort by</button> */}
                   </div>
                 </div>
              
+                {isMenuOpen && <Addstaff isOpen={isMenuOpen} onClose={handleMenuToggle} />}
 
        {/* Tabs Row */}
        <div className="tabs-row">
@@ -141,20 +156,30 @@ const Staff = () => {
             </tr>
           </thead>
           <tbody>
-            {attendanceData.map((record) => (
-              <tr key={record.id}>
-                <td>{record.id}</td>
-                <td>{record.name}</td>
-                <td>{record.date}</td>
-                <td>{record.timings}</td>
-                <td>
-                  <button className="status present">Present</button>
-                  <button className="status absent">Absent</button>
-                  {/* <button className="status half-shift">Half Shift</button>
-                  <button className="status leave">Leave</button> */}
-                </td>
-              </tr>
-            ))}
+          {attendanceData.map((record) => (
+    <tr key={record.id}>
+      <td>{record.id}</td>
+      <td>{record.name}</td>
+      <td>{record.date}</td>
+      <td>{record.timings}</td>
+      <td>
+        {record.status ? (
+          <button className={`status ${record.status.toLowerCase()}`}>
+            {record.status}
+          </button>
+        ) : (
+          <>
+            <button className="status present" onClick={() => updateAttendanceStatus(record.id, 'Present')}>
+              Present
+            </button>
+            <button className="status absent" onClick={() => updateAttendanceStatus(record.id, 'Absent')}>
+              Absent
+            </button>
+          </>
+        )}
+      </td>
+    </tr>
+  ))}
           </tbody>
         </table>
       )}

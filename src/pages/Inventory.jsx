@@ -6,6 +6,7 @@ import '../styles/Inventory.css'
 const Inventory = () => {
 
   const navigate = useNavigate(); 
+  const [showProductList, setShowProductList] = useState(false);
   
   const handleProfileClick = () => {
     navigate('/Profile');  
@@ -15,7 +16,10 @@ const Inventory = () => {
     navigate('/notification');  
   };
 
-
+  const handleFilterClick = () => {
+    setShowProductList(true);
+  }
+  
   return (
     <div className="report-container">
       <div className="report-header">
@@ -37,7 +41,7 @@ const Inventory = () => {
       <div className="sub-header">
         <span className="text2">150 totals products</span>
         <div className="btn">
-          <button className="category" >Add New Inventory</button>
+          <button className="category2" >Add New Inventory</button>
         </div>
       </div>
 
@@ -64,28 +68,26 @@ const Inventory = () => {
                       Draft <span className="count">10</span>
                     </button>
                </div>
-               
               </div>
           </div>
 
           {/* Category */}
           <div className="filter-group">
-            <h2 className="filter-title">Category</h2>
-            <select className="filter-select">
-              <option>All</option>
-              <option>Exams</option>
-              <option>Books</option>
-              <option>Stationery</option>
-            </select>
+              <h2 className="filter-title">Category</h2>
+              <select className="filter-select">
+                <option>All</option>
+                <option>Books</option>
+                <option>Stationery</option>
+              </select>
           </div>
 
           {/* Stock */}
           <div className="filter-group">
-            <h2 className="filter-title">Stock</h2>
-            <select className="filter-select">
-              <option>InStock</option>
-              <option>OutOfStock</option>
-            </select>
+              <h2 className="filter-title">Stock</h2>
+              <select className="filter-select">
+                <option>InStock</option>
+                <option>OutOfStock</option>
+              </select>
           </div>
 
           {/* Value */}
@@ -96,33 +98,6 @@ const Inventory = () => {
               placeholder="Number"
               className="filter-input"
             />
-          </div>
-
-          {/* Quantity */}
-          <div className="filter-group">
-            <h2 className="filter-title">Piece / Item / Quantity</h2>
-            <input
-              type="number"
-              placeholder="50"
-              className="filter-input"
-            />
-          </div>
-
-          {/* Price */}
-          <div className="filter-group">
-            <h2 className="filter-title">Price</h2>
-            <div className="price-inputs">
-              <input
-                type="number"
-                placeholder="50"
-                className="filter-input"
-              />
-              <input
-                type="number"
-                placeholder="120"
-                className="filter-input"
-              />
-            </div>
           </div>
 
           {/* Reset Filters */}
@@ -159,8 +134,8 @@ const Inventory = () => {
                   <p className="detail-title">Retail Price</p>
                   <p className="detail-value">Rs. 55.00</p>
                 </div>
-                  <i className="fa-solid fa-pencil edit" style={{ fontSize: "11px" }}></i>
-                  <i className="fa-solid fa-trash delete" style={{ fontSize: "11px" }}></i>
+                  <i className="fa-solid fa-pencil edit-button" style={{ fontSize: "11px" }}></i>
+                  <i className="fa-solid fa-trash delete-button" style={{ fontSize: "11px" }}></i>
               </div>
             </div>
           ))}

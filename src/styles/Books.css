@@ -1,7 +1,7 @@
 .book-container{
     padding: 26px;
     font-family: sans-serif;
-    width: 100%;
+    width: 84%;
     height: 100%;
 }
 
@@ -90,14 +90,30 @@ h1{
     justify-content: space-between;
     margin-top: 20px;
   }
+
   .category{
-    background-color: #608BC1;
+    background-color: #3D67F5;
     border-radius: 5px;
     width: 140px;
-    height: 35px;
+    color: black;
+    padding: 0 20px;
+    height: 40px;
     box-shadow: none;
     border: none;
+    cursor: pointer;
   }
+
+  /* .add-button {
+    background-color: #3D67F5;
+    color: black;
+    padding: 0 20px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 88px;
+    margin-left: auto;
+    cursor: pointer;
+  } */
 
   .text{
     font-size: 20px;
@@ -110,13 +126,15 @@ h1{
     justify-content: space-between; /* Ensure even spacing between all cards */
     align-items: center; /* Vertically center the cards */
     padding-top: 15px;
+    overflow-y: hidden;
     gap: 20px; /* Add consistent spacing between cards */
-    flex-wrap: wrap; /* Allow cards to wrap if necessary */
+    /* flex-wrap: wrap;  */
+    overflow-x: auto;/* Allow cards to wrap if necessary */
   }
   
   .category-card {
     flex: 1;
-    max-width: 120px;
+    min-width: 120px;
     height: 100px;
     background-color: #333;
     border-radius: 5px;
@@ -125,6 +143,7 @@ h1{
     justify-content: center;
     align-items: flex-start;
     padding: 10px;
+  
     transition: all 0.3s ease-in-out; /* Smooth transition for active state */
     cursor: pointer;
   }
@@ -182,12 +201,13 @@ h1{
   .tabs {
     display: flex;
     margin-bottom: 20px;
-    padding-left: 60px;
+    padding-left: 70px;
   }
   
   .tab {
     background-color: #2e2e2e;
     color: white;
+    height: 40px;
     padding: 4px 4px;
     border: none;
     border-radius: 5px;
@@ -199,18 +219,6 @@ h1{
   .tab.active {
     background-color: #3D67F5;
     color: black;
-  }
-  
-  .add-button {
-    background-color: #3D67F5;
-    color: black;
-    padding: 0 20px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 88px;
-    margin-left: auto;
-    cursor: pointer;
   }
   
   .book-table {
@@ -263,7 +271,10 @@ h1{
     margin-left: 26px;
   }
 
+
   
-  
-  
+::-webkit-scrollbar
+{
+  height: 4px;
+}
   
